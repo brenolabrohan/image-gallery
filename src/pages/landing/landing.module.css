@@ -1,0 +1,185 @@
+.header {
+    height: 95vh;
+    background-image: linear-gradient(to right,rgba(0,8,51,0.6), rgba(0,8,51,0.7)) ,url(../../assets/img/hero.jpg);
+    background-size: cover;
+    background-position: top;
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    position: relative;
+}
+
+.logoBox {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+}
+
+.logo {
+    height: 55px;
+}
+
+.headerContent {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);   
+    text-align: center; 
+}
+
+.headingPrimary {
+    color: #fff;
+    margin-bottom: 60px;
+}
+
+.headingPrimaryMain {
+    display: block;
+    font-size: 60px;
+    font-weight: 700;
+    letter-spacing: 35px;
+    animation-name: moveInLeft;
+    animation-duration: 3s;
+}
+
+.headingPrimarySub {
+    display: block;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 15px;
+    animation-name: moveInRight;
+    animation-duration: 3s;
+}
+
+.searchBar {
+    width: 100%;
+    max-width: 700px;
+    background: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    border-radius: 60px;
+    padding: 10px 20px;
+    animation-name: moveInUp;
+    animation-duration: 3s;
+}
+
+.searchBar input {
+    background: transparent;
+    flex: 1;
+    border: 0;
+    outline: none;
+    padding: 24px 20px;
+    font-size: 20px;
+    color: #cac7ff;
+}
+
+::placeholder {
+    color: #cac7ff;
+}
+
+.searchBar button img {
+    width: 25px;
+}
+
+.searchBar button {
+    border: 0;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    background: #58629b;
+    cursor: pointer;
+}
+
+.searchItem {
+    position: absolute;
+    top: 100;
+    display: block;
+    margin-top: 4%;
+    margin-left: 3%;
+    color: black;
+    text-transform: uppercase;
+}
+
+@media (max-width: 640px) {
+    .header {
+        height: 50vh;
+        background-size: cover;
+        background-position: top;
+        position: relative;
+    }
+    .logoBox {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+    }
+    .headerContent {
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -50%);   
+        text-align: center; 
+    }
+    .headingPrimaryMain {
+        font-size: 30px;
+        font-weight: 600;
+        letter-spacing: 25px;
+    }
+    .headingPrimarySub {
+        font-size: 16px;
+        font-weight: 400;
+        letter-spacing: 8px;
+    }
+    .searchBar {
+        max-width: 500px;
+        padding: 10px;
+    }
+    .searchBar input {
+        padding: 8px 10px;
+        font-size: 16px;
+    }
+    .searchBar button {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes easeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(300px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}

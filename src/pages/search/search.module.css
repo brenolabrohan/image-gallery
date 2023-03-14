@@ -1,0 +1,156 @@
+.header2 {
+    width: 100vw;
+    background: white;
+    background-position: top;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    flex-wrap: wrap;
+    z-index: 1000;
+}
+
+.logo2 {
+    height: 55px;
+}
+
+.helperArea {
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.searchBar2 {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    border-radius: 60px;
+    padding: 5px 10px;
+    height: 60px;
+    background: rgb(238, 238,238);
+    margin-left: 20px;
+}
+
+.searchBar2 input {
+    background: transparent;
+    flex: 1;
+    border: 0;
+    outline: none;
+    padding: 24px 20px;
+    font-size: 14px;
+    color: rgb(17,17,17);
+}
+
+.searchBar2 input::placeholder {
+    color: rgb(17,17,17);
+}
+
+.searchBar2 button img {
+    width: 25px;
+}
+
+.searchBar2 button {
+    border: 0;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    background: transparent;
+    cursor: pointer;
+}
+
+.filterArea {
+    height: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.filterArea ul {
+    margin:0;
+    padding:0;
+    list-style-type:none;
+    display:inline-block;
+  }
+  
+  .filterArea ul li {
+    position:relative;
+    margin:0 20px 0 0;
+    display:inline-block;
+  }
+  
+  .filterArea ul li a {
+    padding:20px;
+    display:inline-block;
+    color:black;
+    text-decoration:none;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  
+  .filterArea ul li a:hover {
+    opacity:0.5;
+    background: rgb(238, 238,238);
+  }
+  
+  .filterArea ul li ul {
+    display:none;
+    position:absolute;
+    left:0;
+    background: rgb(238, 238,238);
+    float:left;
+  }
+  
+  .filterArea ul li ul li {
+    width:100%;
+    border-bottom:1px solid rgba(255,255,255,.3);
+  }
+  
+  .filterArea ul li:hover ul {
+    display:block;
+  }
+  
+  .searchItem {
+    position: absolute;
+    top: 100;
+    display: block;
+    margin-top: 4%;
+    margin-left: 3%;
+    color: black;
+    text-transform: uppercase;
+}
+@media (max-width: 640px) {
+    .searchBar2 {
+        width: 60%;
+        display: flex;
+        /* order: 3; */
+        align-items: center;
+        border-radius: 60px;
+        padding: 5px 10px;
+        height: 40px;
+        background: rgb(238, 238,238);
+        margin-left: 0px;
+    }
+    
+    .searchBar2 input {
+        flex: 1;
+        padding: 8px 10px;
+        font-size: 14px;
+    }
+    
+    .searchBar2 button {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+
+@media (max-width: 800px) {
+    .helperArea {
+        width: 100%;
+    }
+  }

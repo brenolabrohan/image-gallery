@@ -1,0 +1,28 @@
+.galleryContainer {
+    position: absolute;
+    /* width: 100%; */
+    margin: 7% auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1.5rem;
+    padding: 1.5rem;
+}
+
+.eachImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    cursor: zoom-in;
+}
+
+@media (max-width: 640px) {
+    .galleryContainer {
+        width: 100%;
+        margin: 30px auto;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 0.8rem;
+        padding: 0.8rem;
+    }
+}
