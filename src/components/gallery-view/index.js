@@ -1,7 +1,8 @@
 import styles from "./gallery-view.module.css";
 
-const GalleryView = ({ images, lastImageElementRef, onImageClick }) => {
-    return <div>
+const GalleryView = ({ images, lastImageElementRef, onImageClick, searchText }) => {
+    return <div className={styles.content}>
+      <div className={styles.searchItem}>{searchText}</div>
     <div className={styles.galleryContainer}>
       {images?.map((item, index) => {
         if (images.length === index + 1) {

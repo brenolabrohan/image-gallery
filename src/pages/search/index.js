@@ -9,7 +9,6 @@ import LightBox from "../../components/lightBox";
 import Loader from "../../components/loader";
 import GalleryView from "../../components/gallery-view";
 
-const options = ["Animals", "Nature", "Travel", "Film", "Fashion & Beauty"];
 const Search = () => {
   const navigate = useNavigate();
   let { search: searchText } = useParams();
@@ -20,13 +19,20 @@ const Search = () => {
   const [images, setImages] = useState([]);
   const [showLightBox, setShowLightBox] = useState(false);
   const [selectedImage, setSelectedImage] = useState("");
+  const options = ["Animals", "Nature", "Travel", "Film", "Fashion & Beauty"];
+
+  useEffect(() => {
+    if (searchText) {
+      imageSearch(searchText, pageNumber);
+    }
+  }, [searchText]);
 
   const imageSearch = async (query, pageNumber) => {
     setLoading(true);
     setError(false);
     searchImage(query, pageNumber)
       .then((res) => {
-        if (pageNumber === 2) {
+        if (pageNumber === 1) {
           setImages([...res.data.results]);
         } else {
           setImages((prevImages) => {
@@ -66,10 +72,6 @@ const Search = () => {
     setShowLightBox(true);
   };
 
-  useEffect(() => {
-    imageSearch(searchText, pageNumber);
-  }, []);
-
   return (
     <div>
       <header className={styles.header2}>
@@ -107,14 +109,20 @@ const Search = () => {
           </div>
         </div>
       </header>
-      <div className={styles.searchItem}><h1>{searchText}</h1></div>
-      <GalleryView images={images} lastImageElementRef={lastImageElementRef} onImageClick={onImageClick} />
+      <div className={styles.helperclass}>
+        {images.length !== 0 && (
+          <GalleryView
+            images={images}
+            lastImageElementRef={lastImageElementRef}
+            onImageClick={onImageClick}
+            searchText={searchText}
+          />
+        )}
+      </div>
       {showLightBox && (
         <LightBox setShowLightBox={setShowLightBox} image={selectedImage} />
       )}
-      {loading && (
-        <Loader visible={loading} />
-      )}
+      {loading && <Loader visible={loading} />}
     </div>
   );
 };

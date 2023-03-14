@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const access_key = "ZH4jO6COjkcAbBQiATXwmFKFKgbxAlzpd6lVcnB2jrY";
+const access_key = process.env.REACT_APP_UNSPLASH_KEY;
 
 export const getImages = async (page) => {
   const res = axios({

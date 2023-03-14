@@ -113,16 +113,10 @@
   .filterArea ul li:hover ul {
     display:block;
   }
-  
-  .searchItem {
-    position: absolute;
-    top: 100;
-    display: block;
-    margin-top: 4%;
-    margin-left: 3%;
-    color: black;
-    text-transform: uppercase;
-}
+  .helperclass {
+    margin-top: 0%;
+  }
+
 @media (max-width: 640px) {
     .searchBar2 {
         width: 60%;
@@ -140,11 +134,16 @@
         flex: 1;
         padding: 8px 10px;
         font-size: 14px;
+        width: 20px;
     }
     
     .searchBar2 button {
         width: 30px;
         height: 30px;
+    }
+
+    .helperclass {
+        margin-top: 36%;
     }
 }
 

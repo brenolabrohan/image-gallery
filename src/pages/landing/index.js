@@ -86,8 +86,7 @@ const Landing = () => {
           </form>
         </div>
       </header>
-      <div className={styles.searchItem}><h1>Editorial</h1></div>
-      <GalleryView images={images} lastImageElementRef={lastImageElementRef} onImageClick={onImageClick} />
+      <GalleryView images={images} lastImageElementRef={lastImageElementRef} onImageClick={onImageClick} searchText={"Editorial"}/>
       {showLightBox && (
         <LightBox setShowLightBox={setShowLightBox} image={selectedImage} />
       )}

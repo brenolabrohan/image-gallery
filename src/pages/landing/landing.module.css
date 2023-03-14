@@ -87,16 +87,6 @@
     cursor: pointer;
 }
 
-.searchItem {
-    position: absolute;
-    top: 100;
-    display: block;
-    margin-top: 4%;
-    margin-left: 3%;
-    color: black;
-    text-transform: uppercase;
-}
-
 @media (max-width: 640px) {
     .header {
         height: 50vh;

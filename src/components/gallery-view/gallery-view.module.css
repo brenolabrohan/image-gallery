@@ -1,7 +1,9 @@
-.galleryContainer {
+.content {
     position: absolute;
-    /* width: 100%; */
     margin: 7% auto;
+}
+
+.galleryContainer {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 1.5rem;
@@ -16,13 +18,25 @@
     cursor: zoom-in;
 }
 
+.searchItem {
+    display: block;
+    margin-left: 3%;
+    color: black;
+    text-transform: uppercase;
+    font-size: 24px;
+    font-weight: 700;
+ }
+
 @media (max-width: 640px) {
     .galleryContainer {
         width: 100%;
-        margin: 30px auto;
+        /* margin: 30px auto; */
         display: grid;
         grid-template-columns: repeat(1, 1fr);
         grid-gap: 0.8rem;
         padding: 0.8rem;
     }
+    .searchItem {
+        font-size: 16px;
+     }
 }
