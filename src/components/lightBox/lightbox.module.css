@@ -22,6 +22,46 @@
     overflow: auto;
 }
 
+.imageContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.leftArrowStyle {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    left: 60px;
+    font-size: 75px;
+    color: #fff;
+    z-index: 20;
+    cursor: pointer;
+}
+
+.rightArrowStyle {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    right: 60px;
+    font-size: 75px;
+    color: #fff;
+    z-index: 20;
+    cursor: pointer;
+}
+
+.cancelStyle {
+    position: absolute;
+    top: 5%;
+    transform: translate(0, -50%);
+    right: 60px;
+    font-size: 32px;
+    color: #fff;
+    z-index: 20;
+    cursor: pointer;
+}
+
 .imageBox {
     display: flex;
     flex-direction: column;
@@ -32,6 +72,7 @@
 .imageBox img {
     object-fit: cover;
     display: block;
+    width: 100%;
 }
 
 .imgDetails {
@@ -61,5 +102,22 @@
     .imageBox img {
         width: 95vw;
         height: 60vh;
+    }
+    .leftArrowStyle{
+        font-size: 34px;
+    }
+    .rightArrowStyle {
+        font-size: 34px;
+    }
+}
+
+@keyframes moveInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
     }
 }

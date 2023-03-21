@@ -1,22 +1,50 @@
 import styles from "./lightbox.module.css";
 
-const LightBox = ({ setShowLightBox, image }) => {
+const LightBox = ({ setShowLightBox, data, image, imageChange, nextApiCall }) => {
+  const onButtonClick = (buttonType) => {
+    if (buttonType === "left" && image !== 0) {
+      imageChange(image - 1);
+    } else if (buttonType === "right") {
+      if (image + 2 === data.length) {
+        nextApiCall();
+      }
+      imageChange(image + 1);
+    }
+  };
   return (
-    <div
-      className={styles.lightboxContainer}
-      onClick={() => setShowLightBox(false)}
-    >
+    <div className={styles.lightboxContainer}>
+      <div
+        className={styles.cancelStyle}
+        onClick={() => setShowLightBox(false)}
+      >
+        &#x2716;
+      </div>
       <span>
         <div className={styles.imageBox}>
-          <img src={image.urls.regular} />
+          <div className={styles.imageContainer}>
+            <div
+              className={styles.leftArrowStyle}
+              onClick={() => onButtonClick("left")}
+            >
+              &#8249;
+            </div>
+            <img src={data[image].urls.regular} />
+            <div
+              className={styles.rightArrowStyle}
+              onClick={() => onButtonClick("right")}
+            >
+              &#8250;
+            </div>
+          </div>
+
           <div className={styles.imgDetails}>
             <div style={{ width: "30%" }}>
               <p className={styles.boldText}>User</p>
-              <p>{image.user.name}</p>
+              <p>{data[image].user.name}</p>
             </div>
             <div style={{ width: "30%" }}>
               <p className={styles.boldText}>Description</p>
-              <p>{image.alt_description}</p>
+              <p>{data[image].alt_description}</p>
             </div>
           </div>
         </div>

@@ -11,7 +11,7 @@ const GalleryView = ({ images, lastImageElementRef, onImageClick, searchText }) 
               <img
                 src={item.urls.regular}
                 className={styles.eachImg}
-                onClick={() => onImageClick(item)}
+                onClick={() => onImageClick(index)}
               />
             </figure>
           );
@@ -21,7 +21,7 @@ const GalleryView = ({ images, lastImageElementRef, onImageClick, searchText }) 
               <img
                 src={item.urls.regular}
                 className={styles.eachImg}
-                onClick={() => onImageClick(item)}
+                onClick={() => onImageClick(index)}
               />
             </figure>
           );

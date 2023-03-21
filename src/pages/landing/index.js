@@ -40,8 +40,7 @@ const Landing = () => {
       if (observer.current) observer.current.disconnect();
       observer.current = new IntersectionObserver((entires) => {
         if (entires[0].isIntersecting) {
-          setPageNumber(pageNumber + 1);
-          getPhotos(pageNumber + 1);
+          getNextImages();
         }
       });
       if (node) observer.current.observe(node);
@@ -57,10 +56,19 @@ const Landing = () => {
     navigate(`/dashboard/${query}`);
   };
 
-  const onImageClick = (image) => {
-    setSelectedImage(image);
+  const onImageClick = (imageIndex) => {
+    setSelectedImage(imageIndex);
     setShowLightBox(true);
   };
+
+  const imageChange = (newIndex) => {
+    setSelectedImage(newIndex);
+  }
+
+  const getNextImages = () => {
+    setPageNumber(pageNumber + 1);
+    getPhotos(pageNumber + 1);
+  }
 
   return (
     <div>
@@ -88,7 +96,7 @@ const Landing = () => {
       </header>
       <GalleryView images={images} lastImageElementRef={lastImageElementRef} onImageClick={onImageClick} searchText={"Editorial"}/>
       {showLightBox && (
-        <LightBox setShowLightBox={setShowLightBox} image={selectedImage} />
+        <LightBox setShowLightBox={setShowLightBox} data={images} image={selectedImage} imageChange={imageChange} nextApiCall={getNextImages} />
       )}
       {loading && (
         <Loader visible={loading} />
